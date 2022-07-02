@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* font-family: 'Noto Sans JP', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+/* font-family: 'Poppins', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+
+* {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    color: #333;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
