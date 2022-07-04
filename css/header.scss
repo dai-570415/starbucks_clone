@@ -21,6 +21,7 @@
             display: block;
             position: relative;
             li {
+                text-align: right;
                 a {
                     display: inline-block;
                     font-weight: 400;
@@ -55,6 +56,7 @@
                 }
             }
             p {
+                text-align: justify;
                 font-size: 16px;
                 line-height: 1.5;
                 margin: 0 0 12px 0;
@@ -86,6 +88,9 @@
     }
     .thumb {
         display: flex;
+        position: relative;
+        bottom: 30px;
+        z-index: 1;
         li {
             display: inline-block;
             margin: 0 20px;
@@ -103,20 +108,38 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
+        flex-direction: column;
+        padding: 24px 16px;
+        border-radius: 16px 0 0 16px;
+        background: #017143;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
         li {
+            margin: 0 0 24px 0;
             a {
                 display: inline-block;
-                margin: 32px 12px 0;
+                filter: invert(1);
                 img {
                     width: auto;
                     height: 20px;
                 }
             }
+            &:last-child {
+                margin: 0;
+            }
         }
     }
     .circle {
-        display: none;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #017143;
+        clip-path: circle(530px at center 1375px);
     }
 }
 @media screen and (min-width:768px) {
@@ -140,6 +163,9 @@
             margin: 0;
             .textBox {
                 margin: 0;
+                p {
+                    text-align: left;
+                }
             }
             .imgBox {
                 width: 80%;
@@ -152,26 +178,20 @@
             transform: translateX(-50%);
         }
         .sns {
-            flex-direction: column;
-            position: absolute;
-            top: 50%;
+            padding: 0;
+            border-radius: none;
+            background: none;
             right: 30px;
-            transform: translateY(-50%);
             li {
+                margin: 0 0 12px 0;
                 a {
                     margin: 8px 0;
-                    filter: invert(1);
                 }
             }
         }
         .circle {
-            display: block;
-            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: #017143;
             clip-path: circle(540px at right 800px);
         }
     }
@@ -210,8 +230,6 @@
         .sns {
             li {
                 a {
-                    margin: 12px 0;
-                    filter: invert(1);
                     img {
                         height: 32px;
                     }
@@ -233,6 +251,15 @@
         }
         .content {
             width: 1000px;
+            .textBox {
+                h2 {
+                    font-size: 64px;
+                    line-height: 1.2;
+                    span {
+                        font-size: 72px;
+                    }
+                }
+            }
             .imgBox {
                 width: 72%;
                 left: 40px;
@@ -244,6 +271,11 @@
                 img {
                     max-width: 80px;
                 }
+            }
+        }
+        .sns {
+            li {
+                margin: 0 0 24px 0;
             }
         }
         .circle {
